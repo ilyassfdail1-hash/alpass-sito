@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <link rel="icon" href="favicon.png">
-<title>ALPASS, quale serata</title>
-<meta name="description" content="ALPASS: lo chef che sistema dentro quello che i clienti dicono fuori. Scegli la serata che vorresti piena e ti porto il primo passo. Controllo gratis in 15 minuti.">
+<title>ALPASS: quale serata vorresti piena?</title>
+<meta name="description" content="Ilias, chef: ti faccio trovare online e guardo i conti della tua cucina. Dimmi la serata che vorresti piena. Il controllo è gratis: 15 minuti.">
 <link rel="preload" href="fonts/Archivo-variable.woff" as="font" type="font/woff" crossorigin>
 <style>
 @font-face{font-family:"Archivo";src:url("fonts/Archivo-variable.woff") format("woff");font-weight:100 900;font-stretch:62% 125%;font-style:normal;font-display:swap}
@@ -203,11 +203,11 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   <div class="wrap">
     <a class="mark" href="#inizio">al pass<b>!</b></a>
     <nav aria-label="Pagina">
-      <a href="#scarto">Lo scarto</a>
-      <a href="#passo">Il primo passo</a>
+      <a href="#scarto">Il test</a>
+      <a href="#passo">Come si parte</a>
       <a href="#prezzi">Prezzi</a>
-      <a href="#chef">Lo chef</a>
-      <a href="#obiezioni">Obiezioni</a>
+      <a href="#chef">Chi sono</a>
+      <a href="#obiezioni">Domande</a>
       <a class="cta" href="#controllo">Controllo gratis</a>
     </nav>
   </div>
@@ -216,8 +216,9 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 <main id="inizio">
 <section class="hero flame" aria-labelledby="h1">
   <div class="wrap">
+    <p class="slogan" style="margin:0 0 14px;font-weight:800;font-stretch:112%;font-size:clamp(15px,1.4vw,19px);letter-spacing:.01em;text-transform:uppercase;color:#1B1A17">Più tavoli pieni, conti che tornano.</p>
     <h1 id="h1" class="t-xl">Quale serata vorresti piena?</h1>
-    <p class="q" style="margin-top:18px">Il venerdì lo riempiono tutti. Tocca il giorno che ti pesa: ti dico da dove si comincia, in tre passi, senza impegno.</p>
+    <p class="q" style="margin-top:18px">Il venerdì si riempie da solo. Tocca il giorno che ti pesa: ti dico da dove partire. Gratis.</p>
     <div class="days" role="group" aria-label="Scegli la serata">
       <button class="day" aria-pressed="false" data-d="lunedì" data-k="il lunedì" data-g="del lunedì">Lunedì <small>chiuso o quasi</small></button>
       <button class="day" aria-pressed="true" data-d="martedì" data-k="il martedì" data-g="del martedì">Martedì <small>la più vuota</small></button>
@@ -227,10 +228,10 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     </div>
     <div class="answer" aria-live="polite">
       <p class="big" id="ans-t">Il martedì, allora.</p>
-      <p id="ans-p">Non è un problema di cucina: il martedì chi cerca dove mangiare sceglie dalle recensioni e dalla scheda Google, e lì il tuo locale non si vede. Si sistema fuori, e si tiene con quello che fai dentro.</p>
+      <p id="ans-p">La cucina non c'entra. Il martedì la gente sceglie dal telefono: guarda le recensioni e Google. E lì il tuo locale non si vede. Prima si sistema online. Poi si tiene con quello che fai in cucina e in sala.</p>
       <div class="acts">
-        <a class="btn btn-fill" id="ans-cta" href="#controllo">Dimmi da dove si comincia</a>
-        <a class="btn btn-ghost" href="#scarto">Prima misura lo scarto</a>
+        <a class="btn btn-fill" id="ans-cta" href="#controllo">Dimmi da dove parto</a>
+        <a class="btn btn-ghost" href="#scarto">Prima fai il test</a>
       </div>
     </div>
   </div>
@@ -240,48 +241,48 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   <div class="wrap">
     <div class="head">
       <h2 id="h2" class="t-l">Il tuo locale vale più di quello che Google dice di te?</h2>
-      <p class="lead">Fuori è quello che mostri: scheda, recensioni, foto, risposte. Dentro è quello che succede davvero: sala, cucina, conti. Sei domande, sì o no. Lo scarto tra i due è il lavoro da fare.</p>
+      <p class="lead">Fuori è quello che la gente vede dal telefono: Google, recensioni, foto. Dentro è quello che succede nel locale: cucina, sala, conti. Rispondi sì o no a sei domande. Vedi subito dove manca qualcosa.</p>
     </div>
     <div class="pass" aria-hidden="true">
-      <div class="lamp" id="lamp-f"><span class="n" id="n-f">0</span><h3>Fuori</h3><p>cose che mancano a chi ti guarda da fuori</p></div>
+      <div class="lamp" id="lamp-f"><span class="n" id="n-f">0</span><h3>Fuori</h3><p>cose che mancano a chi ti cerca dal telefono</p></div>
       <div class="lamp" id="lamp-d"><span class="n" id="n-d">0</span><h3>Dentro</h3><p>cose che mancano a chi è già seduto</p></div>
     </div>
     <div class="qs" id="qs">
       <div class="qrow" data-side="f"><p>Le recensioni degli ultimi tre mesi hanno tutte una risposta?<span>Chi legge una critica senza risposta sceglie un altro posto.</span></p><div class="yn" role="group" aria-label="Risposta"><button aria-pressed="false" data-v="1">Sì</button><button aria-pressed="false" data-v="0">No</button></div></div>
-      <div class="qrow" data-side="f"><p>Le foto in cima alla scheda Google sono di quest'anno?<span>Le foto vecchie raccontano un locale che non c'è più.</span></p><div class="yn" role="group" aria-label="Risposta"><button aria-pressed="false" data-v="1">Sì</button><button aria-pressed="false" data-v="0">No</button></div></div>
-      <div class="qrow" data-side="f"><p>Si può prenotare con un messaggio, anche mentre sei in servizio?<span>Il telefono che squilla a vuoto è un tavolo che va da un altro.</span></p><div class="yn" role="group" aria-label="Risposta"><button aria-pressed="false" data-v="1">Sì</button><button aria-pressed="false" data-v="0">No</button></div></div>
-      <div class="qrow" data-side="d"><p>Sai quanto ti resta sui cinque piatti che vendi di più?<span>Senza il food cost, i prezzi li decide il fornitore.</span></p><div class="yn" role="group" aria-label="Risposta"><button aria-pressed="false" data-v="1">Sì</button><button aria-pressed="false" data-v="0">No</button></div></div>
-      <div class="qrow" data-side="d"><p>Il menu dice gli allergeni, piatto per piatto, con la tua firma?<span>È legge, e i clienti lo leggono prima di prenotare.</span></p><div class="yn" role="group" aria-label="Risposta"><button aria-pressed="false" data-v="1">Sì</button><button aria-pressed="false" data-v="0">No</button></div></div>
-      <div class="qrow" data-side="d"><p>Il sabato sera un piatto esce in meno di venti minuti?<span>"Si aspetta tanto" è la critica più scritta su Google.</span></p><div class="yn" role="group" aria-label="Risposta"><button aria-pressed="false" data-v="1">Sì</button><button aria-pressed="false" data-v="0">No</button></div></div>
+      <div class="qrow" data-side="f"><p>Le foto del tuo locale su Google sono di quest'anno?<span>Le foto vecchie mostrano un locale che non c'è più.</span></p><div class="yn" role="group" aria-label="Risposta"><button aria-pressed="false" data-v="1">Sì</button><button aria-pressed="false" data-v="0">No</button></div></div>
+      <div class="qrow" data-side="f"><p>Si può prenotare con un messaggio, anche mentre sei in servizio?<span>Il telefono che squilla a vuoto è un tavolo perso.</span></p><div class="yn" role="group" aria-label="Risposta"><button aria-pressed="false" data-v="1">Sì</button><button aria-pressed="false" data-v="0">No</button></div></div>
+      <div class="qrow" data-side="d"><p>Sai quanto guadagni sui cinque piatti che vendi di più?<span>Se non sai quanto ti costa ogni piatto, i prezzi li decide il fornitore.</span></p><div class="yn" role="group" aria-label="Risposta"><button aria-pressed="false" data-v="1">Sì</button><button aria-pressed="false" data-v="0">No</button></div></div>
+      <div class="qrow" data-side="d"><p>Nel menu ci sono gli allergeni di ogni piatto, firmati da te?<span>È obbligatorio. E i clienti li guardano prima di prenotare.</span></p><div class="yn" role="group" aria-label="Risposta"><button aria-pressed="false" data-v="1">Sì</button><button aria-pressed="false" data-v="0">No</button></div></div>
+      <div class="qrow" data-side="d"><p>Il sabato sera un piatto arriva al tavolo in meno di venti minuti?<span>"Si aspetta tanto" è una delle critiche più scritte su Google.</span></p><div class="yn" role="group" aria-label="Risposta"><button aria-pressed="false" data-v="1">Sì</button><button aria-pressed="false" data-v="0">No</button></div></div>
     </div>
     <div class="verdict" id="verdict" aria-live="polite">
       <p class="t-m" id="v-t">Rispondi alle sei domande.</p>
-      <p id="v-p">Il verdetto arriva qui, senza mandare niente a nessuno: i tuoi sì e i tuoi no non escono dal tuo telefono e non vengono salvati.</p>
+      <p id="v-p">Il risultato esce qui. Le risposte restano sul tuo telefono: non le mandiamo a nessuno e non le salviamo.</p>
     </div>
   </div>
 </section>
 
 <section id="passo" aria-labelledby="h3">
   <div class="wrap">
-    <h2 id="h3" class="t-l" style="max-width:20ch">Da dove si comincia, in tre passi.</h2>
-    <p class="lead" style="margin-top:16px">Non devi scegliere niente adesso. Devi solo dirmi la serata. Gratis è il primo passo; gli altri due hanno il prezzo scritto più sotto.</p>
+    <h2 id="h3" class="t-l" style="max-width:20ch">Come si parte, in tre passi.</h2>
+    <p class="lead" style="margin-top:16px">Adesso non devi scegliere niente. Dimmi solo la serata. Il primo passo è gratis. Gli altri due hanno il prezzo scritto qui sotto.</p>
     <div class="passo-grid">
       <ol class="steps">
-        <li class="step"><time>15 min</time><h3>Oggi: il controllo gratis</h3><p>Guardiamo insieme scheda Google, recensioni e menu, al telefono o nel locale. Ti porto i tre dettagli che i tuoi clienti ti stanno già dicendo. Gratis, anche se poi non lavori con me.</p></li>
-        <li class="step"><time>7 giorni</time><h3>La prima settimana, se partiamo</h3><p>Dalla firma: mezza giornata nel tuo locale, dal pass, scheda Google sistemata, prime risposte alle recensioni, il menu con gli allergeni. È lavoro a listino, non un regalo: l'unica cosa gratis sono i quindici minuti.</p></li>
-        <li class="step"><time>30 min</time><h3>Poi, ogni settimana</h3><p>Mezz'ora tua per approvare. Il resto lo facciamo noi. Dopo un mese, una pagina: cosa hanno detto, cosa abbiamo cambiato, cosa è successo.</p></li>
+        <li class="step"><time>15 min</time><h3>Oggi: il controllo gratis</h3><p>Guardiamo insieme il tuo locale su Google, le recensioni e il menu. Al telefono o da te. Ti dico le tre cose che i tuoi clienti stanno già scrivendo. È gratis, anche se poi non lavoriamo insieme.</p></li>
+        <li class="step"><time>7 giorni</time><h3>La prima settimana, se partiamo</h3><p>Sistemiamo il tuo locale su Google. Rispondiamo alle prime recensioni. Mettiamo online il menu con gli allergeni. Se hai preso anche lo chef, vengo mezza giornata da te. Si paga come scritto nei prezzi: gratis sono solo i quindici minuti.</p></li>
+        <li class="step"><time>30 min</time><h3>Poi, ogni settimana</h3><p>Ti mandiamo tutto pronto. Tu ci metti mezz'ora per dire sì o no. Il resto lo facciamo noi. Ogni mese ti do una pagina: cosa hanno scritto i clienti, cosa abbiamo cambiato, cosa è successo dopo.</p></li>
       </ol>
       <div class="ticket" role="img" aria-label="Comanda con i tre passi per la serata scelta">
         <div class="row"><span>COMANDA</span><span id="tk-day">MARTEDÌ</span></div>
         <hr>
         <ol>
-          <li><b>15 min</b><span>controllo gratis: scheda Google, recensioni, menu</span></li>
-          <li><b>7 giorni</b><span>mezza giornata nel locale, dal pass (a listino)</span></li>
-          <li><b>30 min</b><span>ogni settimana, per approvare; il resto lo facciamo noi</span></li>
+          <li><b>15 min</b><span>controllo gratis: Google, recensioni, menu</span></li>
+          <li><b>7 giorni</b><span>Google, recensioni e menu sistemati (a pagamento)</span></li>
+          <li><b>30 min</b><span>ogni settimana, per dire sì; il resto lo facciamo noi</span></li>
         </ol>
         <hr>
         <div class="row foot"><span>AL PASS</span><span>PRONTO</span></div>
-        <small>Il listino viene dopo. Prima si comincia.</small>
+        <small>Prima si parte. Il pacchetto lo scegli dopo.</small>
       </div>
     </div>
   </div>
@@ -289,67 +290,78 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 
 <section id="prezzi" aria-labelledby="h4">
   <div class="wrap">
-    <h2 id="h4" class="t-l" style="max-width:20ch">Fuori, dentro, o tutte e due. Prezzi scritti.</h2>
-    <p class="lead" style="margin-top:16px">Senza preventivi a sorpresa. Tre pacchetti, un avvio da 290 € una volta. Il primo mese puoi lasciarci quando vuoi, con una email; dal secondo mese bastano trenta giorni di preavviso. In Farsi prenotare la campagna ha un minimo di tre mesi. Prezzi senza IVA.</p>
+    <h2 id="h4" class="t-l" style="max-width:20ch">Cosa paghi e cosa ottieni. Prezzi scritti.</h2>
+    <p class="lead" style="margin-top:16px">Niente preventivi a sorpresa. Ci sono tre pacchetti, uno sopra l'altro: ognuno contiene quello di prima. Lo chef nel tuo locale lo aggiungi se vuoi. All'inizio paghi 290 € una volta sola, per mettere tutto in piedi. Il primo mese te ne vai quando vuoi, con una email. Dal secondo mese basta avvisare 30 giorni prima. Prezzi senza IVA.</p>
     <div class="choices" style="margin-top:clamp(28px,4vw,48px)">
-      <div class="choice"><h3>Fuori</h3><p class="price">da 190 € al mese<small>Farsi trovare</small></p><p>Scheda Google curata, risposte a tutte le recensioni, sito con il pulsante prenota e menu digitale: già dentro. Le critiche dei clienti le leggiamo e te le portiamo.</p></div>
-      <div class="choice"><h3>Dentro</h3><p class="price">290 € al mese<small>Chef di fiducia</small></p><p>Lo chef nel locale ogni mese: food cost piatto per piatto, prezzi, energia per coperto, il servizio visto dal pass.</p></div>
-      <div class="choice best"><h3>Tutte e due</h3><p class="price">580 € al mese<small>Farsi scegliere + chef, invece di 680</small></p><p>Quello che dicono fuori, lo sistemiamo dentro. È il modo in cui lavoriamo meglio, e costa meno dei due presi separati.</p>
-        <ul><li>Posti limitati: lo chef è uno.</li><li>Risponde, l'assistente che prenota anche di notte: 59 € al mese con un abbonamento.</li></ul></div>
+      <div class="choice"><h3>Ti trovano online</h3><p class="price">da 190 € al mese<small>pacchetto Farsi trovare</small></p><p>Per chi ha un buon locale, ma su Google quasi non si vede.</p>
+        <ul><li>Sistemiamo il tuo locale su Google e rispondiamo a tutte le recensioni.</li><li>Ti facciamo un sito semplice con il pulsante per prenotare.</li><li>Il menu si apre dal telefono, con gli allergeni.</li><li>Tu ci metti mezz'ora a settimana per dire sì.</li><li>Ti serve perché oggi la gente sceglie dove mangiare dal telefono.</li></ul></div>
+      <div class="choice"><h3>Lo chef nel tuo locale</h3><p class="price">290 € al mese<small>Chef di fiducia. Con un pacchetto: 190 € in più</small></p><p>Per chi lavora tanto, ma a fine mese i conti non tornano.</p>
+        <ul><li>Vengo mezza giornata al mese da te e guardo come lavorate durante il servizio.</li><li>Calcoliamo quanto ti costa ogni piatto e se il prezzo è giusto.</li><li>Vediamo quanto spendi di luce e gas per ogni cliente.</li><li>Mi chiami quando serve: rispondo entro un giorno lavorativo.</li><li>Ti serve perché anche un locale pieno perde soldi, se i piatti costano troppo.</li></ul></div>
+      <div class="choice best"><h3>Tutte e due</h3><p class="price">580 € al mese<small>Farsi scegliere + chef, invece di 680 €</small></p><p>Per chi vuole più gente al tavolo e i conti in ordine. Quello che i clienti scrivono online, lo sistemiamo in cucina e in sala.</p>
+        <ul><li>Google, sito, Instagram e Facebook, più lo chef nel locale ogni mese.</li><li>Costa 100 € in meno che prenderli separati.</li><li>Posti limitati: lo chef è uno.</li><li>Risponde, l'assistente che prende le prenotazioni sui messaggi anche di notte: 59 € al mese in più.</li></ul></div>
     </div>
     <details class="listino">
       <summary>Tutto il listino, voce per voce</summary>
       <table class="tbl">
-        <tr><th>Farsi trovare</th><td><span>Scheda Google curata (orari, foto, menu, 4 novità al mese), risposta a tutte le recensioni (le negative entro 24 ore), sito vetrina con pulsante prenota, menu digitale con QR fino a 3 lingue, report di una pagina entro il 5.</span></td><td>190 €/mese</td></tr>
-        <tr><th>Farsi scegliere</th><td><span>Tutto Farsi trovare, più Instagram e Facebook: 8 post e 4 reel al mese, 2 storie a settimana, risposta ai messaggi entro un giorno lavorativo, una newsletter o un messaggio WhatsApp al mese a chi ha dato il consenso.</span></td><td>390 €/mese</td></tr>
-        <tr><th>Farsi prenotare</th><td><span>Tutto Farsi scegliere con 8 reel al mese e storie 3 volte a settimana, una campagna continua su Google o Meta (il secondo canale +100 €/mese), conteggio di chiamate, prenotazioni e visite al sito, mezza giornata di foto e video nel locale ogni 3 mesi, videochiamata mensile. Nessuna promessa di coperti: misuriamo e ti diciamo i numeri. Budget pubblicitario a parte.</span></td><td>790 €/mese, minimo 3 mesi</td></tr>
-        <tr><th>Chef di fiducia</th><td><span>Mezza giornata al mese nel locale, food cost e prezzi ogni mese, energia per coperto, Ilias al telefono entro un giorno lavorativo. Da solo 290 €; con Farsi scegliere o Farsi prenotare +190 € al mese.</span></td><td>290 €/mese</td></tr>
-        <tr><th>Farsi scegliere + chef</th><td><span>Fuori e dentro insieme. Presi separati: 680 €.</span></td><td>580 €/mese</td></tr>
-        <tr><th>Farsi prenotare + chef</th><td><span>Fuori e dentro insieme, con la campagna (minimo 3 mesi). Presi separati: 1.080 €.</span></td><td>980 €/mese</td></tr>
-        <tr><th>Avvio</th><td><span>Una volta, con qualsiasi pacchetto: scheda Google, profili, sito e menu messi in piedi. Si paga anche se esci nel primo mese. Senza pacchetto: 490 €.</span></td><td>290 €</td></tr>
-        <tr><th>Mezza giornata nel locale</th><td><span>4 ore di Ilias sul lavoro che serve.</span></td><td>200 €</td></tr>
-        <tr><th>Giornata nel locale</th><td><span>8 ore. Trasferte oltre 30 km: 0,45 €/km.</span></td><td>350 €</td></tr>
-        <tr><th>Check-up di cucina e sala</th><td><span>Un servizio osservato, entro 48 ore le 5 cose da sistemare. Scalato dal primo intervento.</span></td><td>90 €</td></tr>
-        <tr><th>Food cost e prezzi</th><td><span>Schede e food cost di ogni piatto, prezzi consigliati, in 10 giorni lavorativi.</span></td><td>290 €</td></tr>
-        <tr><th>Servizio foto e video</th><td><span>Mezza giornata: almeno 20 foto e 3 video brevi, entro 7 giorni. Cibo vero.</span></td><td>200 €</td></tr>
-        <tr><th>Sito vetrina con prenotazioni</th><td><span>Senza pacchetto. Più 20 € al mese.</span></td><td>590 €</td></tr>
-        <tr><th>Nuovo menu completo</th><td><span>Ricette, food cost, impaginazione.</span></td><td>850 €</td></tr>
-        <tr><th>Rinfresco del marchio</th><td><span>Il tuo logo ridisegnato pulito, colori, versioni per social e stampa. 415 € con un pacchetto più lo chef.</span></td><td>490 €</td></tr>
-        <tr><th>Rebranding completo</th><td><span>Logo nuovo, colori, menu impaginato, kit social, manuale. 1.095 € con un pacchetto più lo chef.</span></td><td>1.290 €</td></tr>
-        <tr><th>ALPASS Risponde</th><td><span>Assistente che risponde e prenota sui messaggi, dichiarato, con i tuoi allergeni. Prima con pochi locali da gennaio 2027, avvio 290 €.</span></td><td>89 €/mese, 59 con un abbonamento</td></tr>
-        <tr><th>Campagne pubblicitarie</th><td><span>Senza pacchetto: 150 € al mese per un canale, minimo 3 mesi. Il budget lo paghi tu a Google o a Meta.</span></td><td>da 150 €/mese</td></tr>
+        <tr><th>Farsi trovare</th><td><span><b>Per chi:</b> su Google non ti vedono.<br><b>Noi:</b> sistemiamo il tuo locale su Google (orari, foto, menu, 4 novità al mese). Rispondiamo a tutte le recensioni, a quelle negative entro 24 ore. Ti facciamo un sito semplice con il pulsante per prenotare. Il menu si apre col telefono da un codice sul tavolo, fino a 3 lingue. Ogni mese, entro il 5, una pagina con i numeri.<br><b>Tu:</b> mezz'ora a settimana per dire sì.</span></td><td>190 €/mese</td></tr>
+        <tr><th>Farsi scegliere</th><td><span><b>Per chi:</b> vuoi che la gente abbia voglia di venire.<br><b>Noi:</b> tutto Farsi trovare, più Instagram e Facebook. Ogni mese 8 post (foto con testo) e 4 video brevi. 2 storie a settimana (le foto che restano 24 ore). Rispondiamo ai messaggi entro un giorno lavorativo. Una volta al mese un messaggio WhatsApp o una email ai tuoi clienti, solo a chi ha detto sì.<br><b>Tu:</b> mezz'ora a settimana per dire sì.</span></td><td>390 €/mese</td></tr>
+        <tr><th>Farsi prenotare</th><td><span><b>Per chi:</b> vuoi più prenotazioni nelle serate vuote.<br><b>Noi:</b> tutto Farsi scegliere, con 8 video brevi al mese e storie 3 volte a settimana. Pubblicità a pagamento su Google oppure su Instagram e Facebook (tutte e due: 100 € al mese in più). Contiamo chiamate, prenotazioni e visite al sito. Ogni 3 mesi, mezza giornata di foto e video nel locale. Una videochiamata al mese.<br><b>Tu:</b> mezz'ora a settimana, più i soldi della pubblicità, che paghi a parte. Non promettiamo coperti: li contiamo e ti diciamo i numeri. Minimo 3 mesi, perché la pubblicità ha bisogno di tempo.</span></td><td>790 €/mese, minimo 3 mesi</td></tr>
+        <tr><th>Chef di fiducia</th><td><span><b>Per chi:</b> lavori tanto, ma i conti non tornano.<br><b>Io:</b> mezza giornata al mese nel tuo locale, a guardare come lavorate. Ogni mese controlliamo quanto ti costa ogni piatto e se i prezzi sono giusti. Vediamo quanto spendi di luce e gas per ogni cliente. Mi chiami quando serve: rispondo entro un giorno lavorativo. Da solo 290 €. Con Farsi scegliere o Farsi prenotare costa 190 € in più al mese.</span></td><td>290 €/mese</td></tr>
+        <tr><th>Farsi scegliere + chef</th><td><span>Online e in cucina, insieme. Presi separati costano 680 €.</span></td><td>580 €/mese</td></tr>
+        <tr><th>Farsi prenotare + chef</th><td><span>Online, pubblicità e cucina, insieme. Minimo 3 mesi. Presi separati costano 1.080 €.</span></td><td>980 €/mese</td></tr>
+        <tr><th>Avvio</th><td><span>Si paga una volta, all'inizio, con qualsiasi pacchetto. Mettiamo in piedi Google, profili, sito e menu. Si paga anche se te ne vai nel primo mese. Senza pacchetto costa 490 €.</span></td><td>290 €</td></tr>
+        <tr><th>Mezza giornata nel locale</th><td><span>4 ore di Ilias da te, sul lavoro che serve.</span></td><td>200 €</td></tr>
+        <tr><th>Giornata nel locale</th><td><span>8 ore da te. Se sei a più di 30 km: 0,45 € al km.</span></td><td>350 €</td></tr>
+        <tr><th>Controllo di cucina e sala</th><td><span>Guardo un servizio intero. Entro 48 ore ti scrivo le 5 cose da sistemare. Se poi lavoriamo insieme, lo togliamo dal primo lavoro.</span></td><td>90 €</td></tr>
+        <tr><th>Costo dei piatti e prezzi</th><td><span>Calcoliamo quanto ti costa ogni piatto. Ti diciamo a che prezzo venderlo. Pronto in 10 giorni lavorativi.</span></td><td>290 €</td></tr>
+        <tr><th>Foto e video</th><td><span>Mezza giornata nel locale. Almeno 20 foto e 3 video brevi, pronti in 7 giorni. Solo cibo vero.</span></td><td>200 €</td></tr>
+        <tr><th>Sito con prenotazioni</th><td><span>Se non prendi un pacchetto. Un sito semplice dove si prenota. Poi 20 € al mese per tenerlo online.</span></td><td>590 €</td></tr>
+        <tr><th>Nuovo menu completo</th><td><span>Le ricette, quanto costa ogni piatto, il menu impaginato.</span></td><td>850 €</td></tr>
+        <tr><th>Logo rinfrescato</th><td><span>Il tuo logo ridisegnato pulito, con i colori giusti, pronto per social e stampa. Con un pacchetto più lo chef: 415 €.</span></td><td>490 €</td></tr>
+        <tr><th>Immagine nuova del locale</th><td><span>Logo nuovo, colori, menu impaginato, grafiche per i social e un libretto con le regole per usarli. Con un pacchetto più lo chef: 1.095 €.</span></td><td>1.290 €</td></tr>
+        <tr><th>ALPASS Risponde</th><td><span>Un assistente automatico che risponde ai messaggi e prende le prenotazioni. Dice sempre che è un assistente e conosce i tuoi allergeni. Parte a gennaio 2027 con pochi locali. Avvio 290 €.</span></td><td>89 €/mese, 59 con un abbonamento</td></tr>
+        <tr><th>Pubblicità a pagamento</th><td><span>Se non prendi un pacchetto. 150 € al mese per un canale: Google, oppure Instagram e Facebook. Minimo 3 mesi. I soldi della pubblicità li paghi tu, direttamente a Google o a Facebook.</span></td><td>da 150 €/mese</td></tr>
       </table>
-      <p class="fine">Il primo mese: se entro 15 giorni lavorativi dal giorno in cui ci hai dato accessi, menu firmato e foto la tua scheda Google non è sistemata, il sito non è online e (nei pacchetti con Instagram) i primi post non sono pubblicati, il primo mese non lo paghi. Se esci, il sito resta tuo a 20 € al mese, oppure te lo consegniamo in file.</p>
-      <p class="fine">Mai compresi: il budget pubblicitario, stampa e insegne, certificazioni HACCP, pareri legali. Lavoro in più: 35 € l'ora online, con le ore scritte prima. Lavori singoli sopra 500 €: metà alla firma, metà alla consegna.</p>
+      <h3 style="margin:32px 0 8px">Quando serve una mano in più</h3>
+      <p class="fine" style="margin-bottom:12px">Ilias viene nel tuo locale, a giornata o a progetto, anche senza un pacchetto. Prezzi scritti prima, senza IVA.</p>
+      <table class="tbl">
+        <tr><th>Formazione del personale</th><td><span>Mezza giornata con la tua squadra, in cucina e in sala: le regole HACCP messe in pratica, come tenere basso il costo dei piatti mentre si cucina, come si accoglie e si serve un tavolo. Si lavora sulle cose vere del tuo locale, non su un corso generico.</span></td><td>200 €</td></tr>
+        <tr><th>Organizzazione di un evento</th><td><span>Cena a tema, festa privata, serata con menu fisso: pensiamo il menu, i tempi di cucina e sala e chi fa cosa. Se vuoi, cerchiamo noi il materiale che serve (tavoli, attrezzature, stoviglie): il noleggio si paga a parte, con i prezzi scritti prima.</span></td><td>su preventivo</td></tr>
+        <tr><th>Apertura di un nuovo locale</th><td><span>Dal menu alla cucina, dai fornitori ai prezzi, fino al primo servizio. Con il lancio online: da 2.790 €.</span></td><td>da 2.500 €</td></tr>
+        <tr><th>Gestire il locale</th><td><span>Una giornata intera con te, dall'apertura alla chiusura: i turni, gli ordini e i fornitori, come è organizzata la cucina, cosa si butta e cosa si potrebbe vendere. Alla fine hai una pagina con le cose da cambiare, in ordine, e quanto ti costano oggi.</span></td><td>350 € al giorno</td></tr>
+        <tr><th>Cercare personale</th><td><span>Ti aiuto a capire che persona ti serve davvero e a scrivere l'annuncio, cosa chiedere al colloquio e come fare la prova in cucina. Se serve, parliamo insieme con le agenzie di selezione del settore: il contratto con loro lo fai tu, io ti consiglio.</span></td><td>200 €</td></tr>
+      </table>
+      <p class="fine">La garanzia del primo mese. Contiamo 15 giorni lavorativi da quando ci dai accessi, menu firmato e foto. Entro quel tempo devono essere pronti: il tuo locale sistemato su Google, il sito online e, se hai Instagram nel pacchetto, i primi post. Se non lo sono, il primo mese non lo paghi. Se te ne vai, il sito resta tuo a 20 € al mese, oppure te lo diamo in file.</p>
+      <p class="fine">Non sono mai compresi: i soldi della pubblicità, stampa e insegne, i certificati HACCP, i pareri legali. Lavoro in più online: 35 € l'ora, con le ore scritte prima. Lavori singoli sopra 500 €: metà alla firma, metà alla consegna.</p>
     </details>
   </div>
 </section>
 
 <section class="count" aria-labelledby="h5">
   <div class="wrap">
-    <h2 id="h5" class="t-l" style="max-width:18ch">Contiamo in coperti e margini, non in like.</h2>
-    <p class="lead" style="margin-top:16px">Li misuriamo il primo giorno e ogni mese. Se un numero non si muove, te lo diciamo per primi.</p>
+    <h2 id="h5" class="t-l" style="max-width:18ch">Contiamo coperti e guadagni, non i like.</h2>
+    <p class="lead" style="margin-top:16px">Li misuriamo il primo giorno e poi ogni mese. Se un numero non si muove, te lo diciamo noi per primi.</p>
     <div class="nums">
       <div class="num"><b>Coperti</b><p>della serata che hai scelto, prima e dopo</p></div>
-      <div class="num"><b>Prenotazioni</b><p>e telefonate perse in servizio</p></div>
-      <div class="num"><b>Recensioni</b><p>voto, quante, quante con risposta</p></div>
-      <div class="num"><b>Food cost</b><p>piatto per piatto, dalle fatture vere</p></div>
+      <div class="num"><b>Prenotazioni</b><p>e telefonate perse durante il servizio</p></div>
+      <div class="num"><b>Recensioni</b><p>il voto, quante sono, quante hanno una risposta</p></div>
+      <div class="num"><b>Costo dei piatti</b><p>piatto per piatto, dalle fatture vere</p></div>
     </div>
-    <p class="line">Lo scarto tra quello che mostri e quello che vali lo misuriamo il primo giorno. Quando si chiude, il lavoro è fatto.</p>
+    <p class="line">La differenza tra come sembri online e come sei davvero la misuriamo il primo giorno. Quando non c'è più, il lavoro è fatto.</p>
   </div>
 </section>
 
 <section class="chef" id="chef" aria-labelledby="h6">
   <div class="wrap">
-    <blockquote id="h6">Le agenzie non sanno cucinare. I consulenti di cucina non fanno marketing. <b>ALPASS fa tutte e due le cose.</b></blockquote>
+    <blockquote id="h6">Il tuo locale, visto da chi ha fatto questo mestiere per 17 anni. <b>Cucina, sala, conti e come ti trovano online: un solo referente.</b></blockquote>
     <div class="bio">
-      <p><b>Sono Ilias Fdail, chef.</b> Conosco il servizio, il food cost e la sala: per questo con i titolari parlo da collega, non da venditore. Online in tutta Italia, in cucina con te quando serve. Italiano, francese, spagnolo, inglese, arabo.</p>
+      <p><b>Sono Ilias Fdail, chef e titolare di ALPASS.</b> Ho lavorato nelle cucine di grandi ristoranti e hotel, in Italia e in Francia, fino a diventare chef. So cosa costa ogni scelta, in cucina, in sala e nei conti. Per questo guardo il tuo locale come lo guarda un cliente, e lo sistemo come lo sistema un professionista. Lavoro online in tutta Italia e vengo nel tuo locale quando serve. Parlo italiano, francese, spagnolo, inglese e arabo.</p>
       <ol class="road">
         <li><span>14 anni</span>Il primo lavoro, bar e aperitivi.</li>
         <li><span>Scuola</span>Diploma alberghiero.</li>
-        <li><span>Brigate</span>Le cucine di grandi ristoranti e hotel, fino a chef.</li>
-        <li><span>Italia e Francia</span>Cucine in tutta Italia e in Francia, poi chef privato.</li>
-        <li><span>Oggi</span>ALPASS: lo stesso mestiere, al servizio del tuo locale.</li>
+        <li><span>Grandi cucine</span>Ristoranti e hotel importanti, fino a diventare chef.</li>
+        <li><span>Italia e Francia</span>Cucine in tutta Italia e in Francia, poi chef privato a casa dei clienti.</li>
+        <li><span>Oggi</span>ALPASS. Stesso mestiere, al servizio del tuo locale.</li>
       </ol>
     </div>
   </div>
@@ -358,27 +370,27 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 <section class="go flame" id="controllo" aria-labelledby="h7">
   <div class="wrap">
     <h2 id="h7" class="t-xl">Il controllo del tuo locale è gratis. Quindici minuti.</h2>
-    <p id="go-p">Scrivimi su WhatsApp con il nome del locale e la serata che vorresti piena. Ti rispondo io, Ilias, e fissiamo i quindici minuti. Anche se poi non lavori con me, i tre dettagli restano tuoi.</p>
+    <p id="go-p">Scrivimi su WhatsApp il nome del locale e la serata che vorresti piena. Ti rispondo io, Ilias, e fissiamo i quindici minuti. Le tre cose che ti dico restano tue, anche se poi non lavoriamo insieme.</p>
     <div class="acts">
       <a class="btn btn-fill" id="wa" href="https://wa.me/393442786104?text=Ciao%20Ilias%2C%20vorrei%20il%20controllo%20gratis%20del%20mio%20locale.%20La%20serata%20che%20vorrei%20piena%20%C3%A8%20il%20marted%C3%AC." rel="noopener">Scrivimi su WhatsApp</a>
       <a class="btn btn-ghost" href="tel:+393442786104">Chiama il 344 27 86 104</a>
       <a class="btn btn-ghost" href="mailto:info@alpass.it?subject=Controllo%20gratis%20del%20mio%20locale">info@alpass.it</a>
     </div>
-    <p class="pilot"><b>Cinque locali pilota.</b> Per i primi cinque che partono con me: Farsi scegliere con lo chef a un prezzo da pilota per tre mesi, senza costo di avvio, in cambio di foto vere, numeri prima e dopo e il permesso di raccontarlo. Chiedimelo al controllo.</p>
+    <p class="pilot"><b>Cinque locali pilota.</b> I primi cinque che partono con me hanno Farsi scegliere con lo chef a un prezzo speciale. Vale per tre mesi, e l'avvio non si paga. In cambio: foto vere, i numeri prima e dopo, e il permesso di raccontarlo. Chiedimelo durante il controllo.</p>
   </div>
 </section>
 
 <section id="obiezioni" aria-labelledby="h9">
   <div class="wrap">
-    <h2 id="h9" class="t-l" style="max-width:20ch">Le cose che mi dicono al pass.</h2>
-    <p class="lead" style="margin-top:16px">Le ho sentite tutte, e qualcuna l'ho detta anch'io. Risposte corte.</p>
+    <h2 id="h9" class="t-l" style="max-width:20ch">Le cose che mi dicono più spesso.</h2>
+    <p class="lead" style="margin-top:16px">Le ho sentite tutte. Qualcuna l'ho detta anch'io. Ecco le risposte, corte.</p>
     <div class="obj" style="margin-top:clamp(28px,4vw,48px)">
-      <details><summary>"Sono sempre pieno."</summary><p>Il sabato. La domanda è il martedì, e quanto ti resta a fine mese. Se sei pieno e i conti tornano, sei la persona con cui misurare lo scarto in cinque minuti: non ti venderò niente.</p></details>
-      <details><summary>"Ho già pagato un'agenzia e ho buttato i soldi."</summary><p>Per questo i prezzi sono scritti, il primo mese puoi lasciarci con una email e i numeri si contano il primo giorno: coperti, prenotazioni, recensioni, food cost. Se non si muovono, lo dico io per primo.</p></details>
-      <details><summary>"I social non servono a un ristorante."</summary><p>I like no. Le recensioni con risposta, la scheda Google con le foto di quest'anno e la prenotazione con un messaggio sì: è lì che un cliente nuovo decide. Il resto lo facciamo solo se serve.</p></details>
-      <details><summary>"Lavoro col passaparola."</summary><p>Il passaparola oggi passa dal telefono: uno ti consiglia, l'altro ti cerca su Google prima di prenotare. Se trova foto vecchie e una critica senza risposta, il passaparola si ferma lì.</p></details>
-      <details><summary>"Non ho tempo."</summary><p>Mezz'ora a settimana, per approvare. Il resto lo facciamo noi. Se ti chiedo di più, è scritto prima e lo decidi tu.</p></details>
-      <details><summary>"Mi vendi un'app?"</summary><p>No. Vendo uno chef che entra nel tuo locale e un lavoro fuori che si vede. L'assistente che risponde ai messaggi arriva a gennaio, con pochi locali, e si dichiara sempre come assistente.</p></details>
+      <details><summary>"Sono sempre pieno."</summary><p>Il sabato sì. Ma il martedì? E quanto ti resta a fine mese? Se sei pieno e i conti tornano, facciamo il test in cinque minuti e non ti vendo niente.</p></details>
+      <details><summary>"Ho già pagato un'agenzia e ho buttato i soldi."</summary><p>Per questo i prezzi sono scritti. Il primo mese te ne vai con una email. E i numeri li contiamo dal primo giorno: coperti, prenotazioni, recensioni, costo dei piatti. Se non si muovono, te lo dico io per primo.</p></details>
+      <details><summary>"I social non servono a un ristorante."</summary><p>I like no. Ma le recensioni con una risposta, le foto di quest'anno su Google e la prenotazione con un messaggio sì. È lì che un cliente nuovo decide se venire. Il resto lo facciamo solo se serve.</p></details>
+      <details><summary>"Lavoro col passaparola."</summary><p>Oggi il passaparola passa dal telefono. Un amico ti consiglia, l'altro ti cerca su Google prima di prenotare. Se trova foto vecchie e una critica senza risposta, si ferma lì.</p></details>
+      <details><summary>"Non ho tempo."</summary><p>Ti chiedo mezz'ora a settimana, per dire sì o no. Il resto lo facciamo noi. Se mi serve più tempo, te lo scrivo prima e decidi tu.</p></details>
+      <details><summary>"Mi vendi un'app?"</summary><p>No. Ti porto uno chef nel locale e un lavoro online che si vede. L'assistente che risponde ai messaggi arriva a gennaio, con pochi locali. E dice sempre che è un assistente.</p></details>
     </div>
   </div>
 </section>
@@ -387,12 +399,12 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   <div class="wrap">
     <h2 id="h8" class="t-l">Regole scritte, come in cucina.</h2>
     <div class="grid" style="margin-top:clamp(28px,4vw,48px)">
-      <div class="rule"><b>Cibo vero</b><p>Mai piatti finti fatti con l'intelligenza artificiale. Le foto sono del tuo locale, i prezzi del tuo menu.</p></div>
-      <div class="rule"><b>Intelligenza artificiale dichiarata</b><p>La usiamo per lavorare più veloci e lo diciamo. Ogni contenuto lo controlla uno chef prima che esca.</p></div>
-      <div class="rule"><b>Nessuna promessa di viralità</b><p>Nessuno può promettere un video virale. Promettiamo costanza, risposte e prenotazioni facili.</p></div>
-      <div class="rule"><b>Tempi scritti</b><p>Recensioni negative con risposta entro 24 ore, le altre entro 48. Messaggi entro un giorno lavorativo.</p></div>
-      <div class="rule"><b>Solo con il tuo consenso</b><p>Niente messaggi ai tuoi clienti senza il loro sì. Niente dati del locale in strumenti che non hai approvato.</p></div>
-      <div class="rule"><b>Segnaliamo, non certifichiamo</b><p>Igiene, allergeni e controlli: ti diciamo cosa sistemare, le certificazioni restano degli enti.</p></div>
+      <div class="rule"><b>Cibo vero</b><p>Mai piatti finti fatti con l'intelligenza artificiale. Le foto sono del tuo locale. I prezzi sono quelli del tuo menu.</p></div>
+      <div class="rule"><b>Intelligenza artificiale dichiarata</b><p>La usiamo per lavorare più veloci, e lo diciamo. Prima che esca qualcosa, lo controlla uno chef.</p></div>
+      <div class="rule"><b>Nessuna promessa di video virali</b><p>Nessuno può promettertelo. Noi promettiamo costanza, risposte veloci e prenotazioni facili.</p></div>
+      <div class="rule"><b>Tempi scritti</b><p>Rispondiamo alle recensioni negative entro 24 ore, alle altre entro 48. Ai messaggi entro un giorno lavorativo.</p></div>
+      <div class="rule"><b>Solo con il tuo consenso</b><p>Niente messaggi ai tuoi clienti se non hanno detto sì. Niente dati del locale in programmi che non hai approvato.</p></div>
+      <div class="rule"><b>Segnaliamo, non certifichiamo</b><p>Igiene, allergeni e controlli: ti diciamo cosa sistemare. I certificati li fanno gli enti e i tecnici abilitati.</p></div>
     </div>
   </div>
 </section>
@@ -409,11 +421,11 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 <script>
 (function(){
   const copy={
-    "lunedì":["Il lunedì, allora.","Il lunedì è il giorno in cui si decide la settimana: chi non ti trova lunedì non ti cerca giovedì. Si parte dalla scheda Google e da chi risponde quando tu non puoi."],
-    "martedì":["Il martedì, allora.","Non è un problema di cucina: il martedì chi cerca dove mangiare sceglie dalle recensioni e dalla scheda Google, e lì il tuo locale non si vede. Si sistema fuori, e si tiene con quello che fai dentro."],
-    "mercoledì":["Il mercoledì, allora.","Il mercoledì si riempie con un motivo per uscire: un piatto della settimana che la gente aspetta, detto nel posto giusto, e una prenotazione che si fa con un messaggio."],
-    "giovedì":["Il giovedì, allora.","Il giovedì è il weekend di chi non vuole la coda del sabato: va detto. Prenotazioni facili, foto vere di questa settimana, e il tavolo per chi arriva tardi."],
-    "domenica sera":["La domenica sera, allora.","La domenica sera decidono le famiglie, dopo pranzo, dal divano, con il telefono in mano. Vince chi risponde subito e ha il menu leggibile dal telefono."]
+    "lunedì":["Il lunedì, allora.","Il lunedì la gente decide dove andare in settimana. Se non ti trova su Google, non ti chiama. Si parte da Google e da chi risponde ai messaggi quando tu non puoi."],
+    "martedì":["Il martedì, allora.","La cucina non c'entra. Il martedì la gente sceglie dal telefono: guarda le recensioni e Google. E lì il tuo locale non si vede. Prima si sistema online. Poi si tiene con quello che fai in cucina e in sala."],
+    "mercoledì":["Il mercoledì, allora.","Il mercoledì serve un motivo per uscire. Per esempio un piatto della settimana che la gente aspetta. Va detto dove la gente guarda, e si deve poter prenotare con un messaggio."],
+    "giovedì":["Il giovedì, allora.","Il giovedì esce chi non vuole la coda del sabato. Bisogna dirglielo. Prenotazione facile, foto vere di questa settimana, un tavolo per chi arriva tardi."],
+    "domenica sera":["La domenica sera, allora.","La domenica sera decidono le famiglie, dal divano, col telefono in mano. Vince chi risponde subito e ha un menu che si legge bene dal telefono."]
   };
   const days=document.querySelectorAll('.day');
   const t=document.getElementById('ans-t'),p=document.getElementById('ans-p'),wa=document.getElementById('wa');
@@ -433,11 +445,11 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     let f=0,d=0,n=0;
     rows.forEach(r=>{const on=r.querySelector('[aria-pressed="true"]');if(!on)return;n++;if(on.dataset.v==='0'){r.dataset.side==='f'?f++:d++;}});
     nf.textContent=f;nd.textContent=d;lf.classList.toggle('on',f>0&&f>=d);ld.classList.toggle('on',d>0&&d>=f);
-    if(n<6){vt.textContent='Ancora '+(6-n)+(6-n===1?' domanda.':' domande.');vp.textContent='Il verdetto arriva qui, senza mandare niente a nessuno: i tuoi sì e i tuoi no non escono dal tuo telefono e non vengono salvati.';return;}
-    if(f===0&&d===0){vt.textContent='Fuori e dentro raccontano la stessa cosa.';vp.innerHTML='Sei allineato: raro. Il lavoro adesso è <b>tenere</b>: recensioni con risposta ogni settimana e il food cost controllato ogni mese. Se vuoi una seconda opinione, il controllo gratis resta.';}
-    else if(f>d){vt.textContent='Vali più di quello che Google dice di te.';vp.innerHTML='Dentro funzioni, fuori non si vede: <b>sei sottovalutato</b>. È il caso migliore, perché il prodotto c\'è già. Primo passo: scheda Google e recensioni, poi una prenotazione che si fa con un messaggio. Il risultato si vede in settimane, non in mesi.';}
-    else if(d>f){vt.textContent='Google dice di te più di quello che succede dentro.';vp.innerHTML='Fuori sei curato, dentro ci sono cose che i clienti noteranno presto: <b>sei sopravvalutato</b>. Primo passo: food cost, allergeni e tempi del sabato, con lo chef dal pass. Prima che le recensioni cambino tono.';}
-    else{vt.textContent='Metà fuori, metà dentro.';vp.innerHTML='Due cose da sistemare per lato: si parte da quella che ti costa di più la serata vuota. La decidiamo insieme nei <b>quindici minuti</b> del controllo.';}
+    if(n<6){vt.textContent='Ancora '+(6-n)+(6-n===1?' domanda.':' domande.');vp.textContent='Il risultato esce qui. Le risposte restano sul tuo telefono: non le mandiamo a nessuno e non le salviamo.';return;}
+    if(f===0&&d===0){vt.textContent='Fuori e dentro dici la stessa cosa.';vp.innerHTML='Raro. Adesso il lavoro è <b>tenere</b>: rispondere alle recensioni ogni settimana e controllare ogni mese quanto ti costano i piatti. Se vuoi un parere in più, il controllo gratis c\'è sempre.';}
+    else if(f>d){vt.textContent='Vali più di quello che Google dice di te.';vp.innerHTML='Dentro lavori bene, ma da fuori non si vede: <b>sei sottovalutato</b>. È il caso migliore, perché il locale buono c\'è già. Si parte da Google e dalle recensioni. Poi si fa in modo che si possa prenotare con un messaggio.';}
+    else if(d>f){vt.textContent='Su Google sembri meglio di come va dentro.';vp.innerHTML='Fuori sei curato. Dentro ci sono cose che i clienti noteranno presto: <b>sei sopravvalutato</b>. Si parte da costo dei piatti, allergeni e tempi del sabato, con lo chef nel locale. Prima che le recensioni cambino.';}
+    else{vt.textContent='Metà fuori, metà dentro.';vp.innerHTML='Ci sono cose da sistemare da tutte e due le parti. Si parte da quella che ti fa perdere più serate. La scegliamo insieme nei <b>quindici minuti</b> del controllo.';}
   }
   rows.forEach(r=>r.querySelectorAll('.yn button').forEach(b=>b.addEventListener('click',()=>{r.querySelectorAll('.yn button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');score();})));
 })();
