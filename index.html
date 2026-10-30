@@ -20,6 +20,7 @@
 :root[data-theme="dark"]{--bg:var(--ink);--fg:var(--paper)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f);font-size:18px;line-height:1.5;font-stretch:100%;-webkit-font-smoothing:antialiased}
 h1,h2,h3,p,ul,ol,figure{margin:0}
@@ -257,7 +258,8 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     </div>
     <div class="verdict" id="verdict" aria-live="polite">
       <p class="t-m" id="v-t">Rispondi alle sei domande.</p>
-      <p id="v-p">Il risultato esce qui. Le risposte restano sul tuo telefono: non le mandiamo a nessuno e non le salviamo.</p>
+      <p id="v-p">Il risultato esce qui. Le risposte restano sul tuo telefono. Se poi mi scrivi su WhatsApp, il messaggio pronto le contiene già: le vedo solo se lo invii tu.</p>
+      <p style="margin-top:20px"><a class="btn btn-fill" id="wa2" hidden href="#controllo" rel="noopener">Mandami il risultato su WhatsApp</a></p>
     </div>
   </div>
 </section>
@@ -371,6 +373,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   <div class="wrap">
     <h2 id="h7" class="t-xl">Il controllo del tuo locale è gratis. Quindici minuti.</h2>
     <p id="go-p">Scrivimi su WhatsApp il nome del locale e la serata che vorresti piena. Ti rispondo io, Ilias, e fissiamo i quindici minuti. Le tre cose che ti dico restano tue, anche se poi non lavoriamo insieme.</p>
+    <p id="go-sum" style="font-weight:700"></p>
     <div class="acts">
       <a class="btn btn-fill" id="wa" href="https://wa.me/393442786104?text=Ciao%20Ilias%2C%20vorrei%20il%20controllo%20gratis%20del%20mio%20locale.%20La%20serata%20che%20vorrei%20piena%20%C3%A8%20il%20marted%C3%AC." rel="noopener">Scrivimi su WhatsApp</a>
       <a class="btn btn-ghost" href="tel:+393442786104">Chiama il 344 27 86 104</a>
@@ -429,12 +432,24 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   };
   const days=document.querySelectorAll('.day');
   const t=document.getElementById('ans-t'),p=document.getElementById('ans-p'),wa=document.getElementById('wa');
+  const sel=document.querySelector('.day[aria-pressed="true"]');
+  let serata=sel?sel.dataset.k:'', esito='';
+  const brevi=['Le recensioni hanno tutte una risposta','Foto di quest\'anno su Google','Si prenota con un messaggio','So quanto guadagno sui 5 piatti più venduti','Allergeni nel menu, firmati','Il sabato un piatto arriva in meno di 20 minuti'];
+  function msg(){
+    const righe=['Ciao Ilias, vorrei il controllo gratis del mio locale.','Il mio locale: (scrivi qui nome e città)','La serata che vorrei piena: '+(serata||'(scrivila qui)')+'.'];
+    const qs=document.querySelectorAll('.qrow'); const ris=[]; let si=0,no=0;
+    qs.forEach((r,i)=>{const on=r.querySelector('[aria-pressed="true"]'); if(!on)return; const v=on.dataset.v==='0'?'no':'sì'; v==='sì'?si++:no++; ris.push('- '+(brevi[i]||('Domanda '+(i+1)))+': '+v);});
+    if(ris.length){ righe.push('','Il mio test ('+si+' sì, '+no+' no'+(ris.length<6?', '+ris.length+' risposte su 6':'')+'):'); righe.push(...ris); if(esito) righe.push('Risultato: '+esito); }
+    const url='https://wa.me/393442786104?text='+encodeURIComponent(righe.join('\n'));
+    wa.href=url; const wa2=document.getElementById('wa2'); if(wa2){wa2.href=url; wa2.hidden=!esito;}
+    const sum=document.getElementById('go-sum'); if(sum){sum.textContent='Nel messaggio pronto ci sono già: '+(serata?'la serata che hai scelto ('+serata+')':'la serata, da scrivere')+(ris.length?' e le '+ris.length+' risposte del test'+(esito?', con il risultato':'')+'.':'. Se fai il test, ci vanno anche le risposte.');}
+  }
   function pick(b){
     days.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
     const d=b.dataset.d, k=b.dataset.k;
     t.textContent=copy[d][0]; p.textContent=copy[d][1];
     document.querySelectorAll('.num p')[0].textContent=b.dataset.g+', prima e dopo';document.getElementById('tk-day').textContent=d.toUpperCase();
-    wa.href='https://wa.me/393442786104?text='+encodeURIComponent('Ciao Ilias, vorrei il controllo gratis del mio locale. La serata che vorrei piena è '+k+'.');
+    serata=k; msg();
   }
   days.forEach(b=>b.addEventListener('click',()=>pick(b)));
 
@@ -445,13 +460,14 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     let f=0,d=0,n=0;
     rows.forEach(r=>{const on=r.querySelector('[aria-pressed="true"]');if(!on)return;n++;if(on.dataset.v==='0'){r.dataset.side==='f'?f++:d++;}});
     nf.textContent=f;nd.textContent=d;lf.classList.toggle('on',f>0&&f>=d);ld.classList.toggle('on',d>0&&d>=f);
-    if(n<6){vt.textContent='Ancora '+(6-n)+(6-n===1?' domanda.':' domande.');vp.textContent='Il risultato esce qui. Le risposte restano sul tuo telefono: non le mandiamo a nessuno e non le salviamo.';return;}
+    if(n<6){esito='';msg();vt.textContent='Ancora '+(6-n)+(6-n===1?' domanda.':' domande.');vp.textContent='Il risultato esce qui. Le risposte restano sul tuo telefono. Se poi mi scrivi su WhatsApp, il messaggio pronto le contiene già: le vedo solo se lo invii tu.';return;}
     if(f===0&&d===0){vt.textContent='Fuori e dentro dici la stessa cosa.';vp.innerHTML='Raro. Adesso il lavoro è <b>tenere</b>: rispondere alle recensioni ogni settimana e controllare ogni mese quanto ti costano i piatti. Se vuoi un parere in più, il controllo gratis c\'è sempre.';}
     else if(f>d){vt.textContent='Vali più di quello che Google dice di te.';vp.innerHTML='Dentro lavori bene, ma da fuori non si vede: <b>sei sottovalutato</b>. È il caso migliore, perché il locale buono c\'è già. Si parte da Google e dalle recensioni. Poi si fa in modo che si possa prenotare con un messaggio.';}
     else if(d>f){vt.textContent='Su Google sembri meglio di come va dentro.';vp.innerHTML='Fuori sei curato. Dentro ci sono cose che i clienti noteranno presto: <b>sei sopravvalutato</b>. Si parte da costo dei piatti, allergeni e tempi del sabato, con lo chef nel locale. Prima che le recensioni cambino.';}
     else{vt.textContent='Metà fuori, metà dentro.';vp.innerHTML='Ci sono cose da sistemare da tutte e due le parti. Si parte da quella che ti fa perdere più serate. La scegliamo insieme nei <b>quindici minuti</b> del controllo.';}
   }
-  rows.forEach(r=>r.querySelectorAll('.yn button').forEach(b=>b.addEventListener('click',()=>{r.querySelectorAll('.yn button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');score();})));
+  rows.forEach(r=>r.querySelectorAll('.yn button').forEach(b=>b.addEventListener('click',()=>{r.querySelectorAll('.yn button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');score();if(document.querySelectorAll('.qrow [aria-pressed="true"]').length===6){esito=vt.textContent;msg();}})));
+  msg();
 })();
 </script>
 </body>
