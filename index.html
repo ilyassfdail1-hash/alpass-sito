@@ -204,7 +204,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   <div class="wrap">
     <a class="mark" href="#inizio">al pass<b>!</b></a>
     <nav aria-label="Pagina">
-      <a href="#scarto">Il test</a>
+      <a href="#scarto">Le 6 domande</a>
       <a href="#passo">Come si parte</a>
       <a href="#prezzi">Prezzi</a>
       <a href="#chef">Chi sono</a>
@@ -232,7 +232,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
       <p id="ans-p">La cucina non c'entra. Il martedì la gente sceglie dal telefono: guarda le recensioni e Google. E lì il tuo locale non si vede. Prima si sistema online. Poi si tiene con quello che fai in cucina e in sala.</p>
       <div class="acts">
         <a class="btn btn-fill" id="ans-cta" href="#controllo">Dimmi da dove parto</a>
-        <a class="btn btn-ghost" href="#scarto">Prima fai il test</a>
+        <a class="btn btn-ghost" href="#scarto">Prima le 6 domande</a>
       </div>
     </div>
   </div>
@@ -379,7 +379,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
       <a class="btn btn-ghost" href="tel:+393442786104">Chiama il 344 27 86 104</a>
       <a class="btn btn-ghost" href="mailto:info@alpass.it?subject=Controllo%20gratis%20del%20mio%20locale">info@alpass.it</a>
     </div>
-    <p class="pilot"><b>Cinque locali pilota.</b> I primi cinque che partono con me hanno Farsi scegliere con lo chef a un prezzo speciale. Vale per tre mesi, e l'avvio non si paga. In cambio: foto vere, i numeri prima e dopo, e il permesso di raccontarlo. Chiedimelo durante il controllo.</p>
+    <p class="pilot"><b>Cinque posti riservati.</b> Per cinque locali, Farsi scegliere con lo chef a un prezzo riservato per tre mesi, senza costo di avvio. In cambio: foto vere, i numeri prima e dopo, e il permesso di raccontare il lavoro fatto. Chiedimelo durante il controllo.</p>
   </div>
 </section>
 
@@ -388,7 +388,7 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     <h2 id="h9" class="t-l" style="max-width:20ch">Le cose che mi dicono più spesso.</h2>
     <p class="lead" style="margin-top:16px">Le ho sentite tutte. Qualcuna l'ho detta anch'io. Ecco le risposte, corte.</p>
     <div class="obj" style="margin-top:clamp(28px,4vw,48px)">
-      <details><summary>"Sono sempre pieno."</summary><p>Il sabato sì. Ma il martedì? E quanto ti resta a fine mese? Se sei pieno e i conti tornano, facciamo il test in cinque minuti e non ti vendo niente.</p></details>
+      <details><summary>"Sono sempre pieno."</summary><p>Il sabato sì. Ma il martedì? E quanto ti resta a fine mese? Se sei pieno e i conti tornano, rispondi alle 6 domande in cinque minuti e non ti vendo niente.</p></details>
       <details><summary>"Ho già pagato un'agenzia e ho buttato i soldi."</summary><p>Per questo i prezzi sono scritti. Il primo mese te ne vai con una email. E i numeri li contiamo dal primo giorno: coperti, prenotazioni, recensioni, costo dei piatti. Se non si muovono, te lo dico io per primo.</p></details>
       <details><summary>"I social non servono a un ristorante."</summary><p>I like no. Ma le recensioni con una risposta, le foto di quest'anno su Google e la prenotazione con un messaggio sì. È lì che un cliente nuovo decide se venire. Il resto lo facciamo solo se serve.</p></details>
       <details><summary>"Lavoro col passaparola."</summary><p>Oggi il passaparola passa dal telefono. Un amico ti consiglia, l'altro ti cerca su Google prima di prenotare. Se trova foto vecchie e una critica senza risposta, si ferma lì.</p></details>
@@ -439,10 +439,10 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     const righe=['Ciao Ilias, vorrei il controllo gratis del mio locale.','Il mio locale: (scrivi qui nome e città)','La serata che vorrei piena: '+(serata||'(scrivila qui)')+'.'];
     const qs=document.querySelectorAll('.qrow'); const ris=[]; let si=0,no=0;
     qs.forEach((r,i)=>{const on=r.querySelector('[aria-pressed="true"]'); if(!on)return; const v=on.dataset.v==='0'?'no':'sì'; v==='sì'?si++:no++; ris.push('- '+(brevi[i]||('Domanda '+(i+1)))+': '+v);});
-    if(ris.length){ righe.push('','Il mio test ('+si+' sì, '+no+' no'+(ris.length<6?', '+ris.length+' risposte su 6':'')+'):'); righe.push(...ris); if(esito) righe.push('Risultato: '+esito); }
+    if(ris.length){ righe.push('','Le mie 6 domande ('+si+' sì, '+no+' no'+(ris.length<6?', '+ris.length+' risposte su 6':'')+'):'); righe.push(...ris); if(esito) righe.push('Risultato: '+esito); }
     const url='https://wa.me/393442786104?text='+encodeURIComponent(righe.join('\n'));
     wa.href=url; const wa2=document.getElementById('wa2'); if(wa2){wa2.href=url; wa2.hidden=!esito;}
-    const sum=document.getElementById('go-sum'); if(sum){sum.textContent='Nel messaggio pronto ci sono già: '+(serata?'la serata che hai scelto ('+serata+')':'la serata, da scrivere')+(ris.length?' e le '+ris.length+' risposte del test'+(esito?', con il risultato':'')+'.':'. Se fai il test, ci vanno anche le risposte.');}
+    const sum=document.getElementById('go-sum'); if(sum){sum.textContent='Nel messaggio pronto ci sono già: '+(serata?'la serata che hai scelto ('+serata+')':'la serata, da scrivere')+(ris.length?' e le '+ris.length+' risposte alle 6 domande'+(esito?', con il risultato':'')+'.':'. Se rispondi alle 6 domande, ci vanno anche le risposte.');}
   }
   function pick(b){
     days.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
