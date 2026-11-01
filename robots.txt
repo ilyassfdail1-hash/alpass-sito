@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /stampa/
+
+Sitemap: https://alpass.it/sitemap.xml
